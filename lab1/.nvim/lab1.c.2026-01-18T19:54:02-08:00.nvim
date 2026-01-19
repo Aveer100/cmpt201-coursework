@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  char *myLine;
+  char *storage;
+
+  printf("Please enter some text: ");
+  getline(myLine, stdin);
+  printf("Tokens");
+  printf('\n');
+
+  while (storage != NULL) {
+    char *current = strtok_r(myLine, " ", &storage);
+    printf("%s", storage);
+  }
+}
