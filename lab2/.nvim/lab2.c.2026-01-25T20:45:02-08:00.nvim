@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+int main() {
+  char *line = NULL;
+  char *temp = NULL;
+  size_t lenght = 0;
+
+  while (100) {
+    printf("Enter programs to run.\n");
+    getline(&line, &lenght, stdin);
+    char *entry = strtok_r(line, "\n", &temp);
+    pid_t pid = fork();
+    if (pid == 0) {
+      execl(entry, entry, (char *)NULL);
+      printf("Exec failure\n");
+      exit(1);
+    } else {
+      waitpid(pid, NULL, 0);
+    }
+  }
+  free(line);
+  return 0;
+}
