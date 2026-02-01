@@ -24,7 +24,7 @@ int main()
         {
           if(storage1[i] == '~')
           {
-            printf(" ");
+            printf("\n");
             continue;
           }
           printf("%c", storage1[i]);
