@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+
+int main()
+{
+  while(100)
+  {
+    char storage1[100];
+    char storage2[100];
+    char storage3[100];
+    char storage4[100];
+    char storage5[100];
+    
+    while(100)
+    {
+      printf("Enter input: ");
+      getline()
+

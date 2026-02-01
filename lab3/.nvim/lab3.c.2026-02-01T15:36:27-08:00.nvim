@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#define _POSIX_C_SOURCE 200809L
+
+bool has_print(char* buffer, int j);
+
+int main()
+{
+    int size;
+    char storage1[200] = "";
+    
+    while(100)
+    {
+      size = strlen(storage1);
+      printf("Enter input: ");
+      fgets(storage1 + size, 200 - size, stdin);
+      storage1[strcspn(storage1, "\n")] = '~';
+      int j = strlen(storage1) - 6;
+      if(if j >= 0 && has_print(storage1, j))
+      {
+        printf("storage1");
+      }
+    }
+}
+
+bool has_print(char* buffer, int j)
+{
+  if(buffer[j] == 'p' &&
+     buffer[j + 1] == 'r' &&
+     buffer[j + 2] == 'i' &&
+     buffer[j + 3] == 'n' &&
+     buffer[j + 4] == 't' &&
+     buffer[j + 5] == '~'
+  )
+    return true;
+  else
+    return false;
+};
+
